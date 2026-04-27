@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Subhranil Das | Setup Profile</title>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@500;600;700&display=swap"
+    rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #050510;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #ff003c;
+    }
+
+    body {
+      background-color: #050510;
+      background-image:
+        linear-gradient(rgba(5, 5, 16, 0.85), rgba(5, 5, 16, 0.85)),
+        linear-gradient(90deg, rgba(0, 240, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(rgba(0, 240, 255, 0.05) 1px, transparent 1px);
+      background-size: 100% 100%, 40px 40px, 40px 40px;
+      color: #e0e6ed;
+      font-family: 'Rajdhani', sans-serif;
+      overflow-x: hidden;
+    }
+
+    h1,
+    h2,
+    h3,
+    .btn,
+    .glitch {
+      font-family: 'Orbitron', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    /* Ambient CRT glow */
+    body::after {
+      content: " ";
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+      z-index: 2;
+      background-size: 100% 2px, 3px 100%;
+      pointer-events: none;
+      position: fixed;
+    }
+
+    /* Animated Cyber Grid Gradient */
+    body::before {
+      content: "";
+      position: fixed;
+      width: 200%;
+      height: 200%;
+      background: conic-gradient(from 180deg at 50% 50%, #050510 0deg, #ff003c20 180deg, #050510 360deg);
+      animation: rotateBG 15s linear infinite;
+      opacity: 0.15;
+      z-index: -1;
+    }
+
+    @keyframes rotateBG {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    header {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      position: relative;
+      z-index: 3;
+    }
+
+    /* Glitch Effect for H1 */
+    header h1 {
+      font-size: 4rem;
+      color: #fff;
+      text-shadow: 0 0 10px #00f0ff, 0 0 20px #00f0ff, 0 0 40px #00f0ff;
+      position: relative;
+      margin-top: 15px;
+    }
+
+    header .subtitle {
+      color: #ff003c;
+      font-weight: 700;
+      font-size: 1.5rem;
+      margin-top: 5px;
+      text-shadow: 0 0 5px #ff003c;
+      font-family: 'Orbitron', sans-serif;
+    }
+
+    header .quote {
+      opacity: 0.8;
+      margin-top: 10px;
+      font-size: 1.2rem;
+      color: #00ff66;
+    }
+
+    .btn {
+      margin-top: 35px;
+      padding: 15px 40px;
+      background: transparent;
+      border: 2px solid #00f0ff;
+      color: #00f0ff;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1.2rem;
+      position: relative;
+      overflow: hidden;
+      transition: 0.2s all ease-in-out;
+      box-shadow: 0 0 10px rgba(0, 240, 255, 0.4), inset 0 0 10px rgba(0, 240, 255, 0.4);
+      clip-path: polygon(10% 0, 100% 0, 100% 70%, 90% 100%, 0 100%, 0 30%);
+    }
+
+    .btn:hover {
+      background: #00f0ff;
+      color: #050510;
+      box-shadow: 0 0 30px #00f0ff, inset 0 0 20px #00f0ff;
+      transform: scale(1.05);
+    }
+
+    .btn-alt {
+      border: 2px solid #ff003c;
+      color: #ff003c;
+      box-shadow: 0 0 10px rgba(255, 0, 60, 0.4), inset 0 0 10px rgba(255, 0, 60, 0.4);
+      cursor: pointer;
+    }
+
+    .btn-alt:hover {
+      background: #ff003c;
+      color: #050510;
+      box-shadow: 0 0 30px #ff003c, inset 0 0 20px #ff003c;
+    }
+
+    .action-buttons {
+      margin-top: 35px;
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .action-buttons .btn {
+      margin-top: 0;
+    }
+
+    .profile-img {
+      width: 220px;
+      height: 220px;
+      border-radius: 10px;
+      /* Angular shape */
+      object-fit: cover;
+      border: 3px solid transparent;
+      box-shadow: 0 0 20px rgba(255, 0, 60, 0.6);
+      margin-bottom: 10px;
+      transition: 0.4s;
+      outline: 4px solid #ff003c;
+      outline-offset: 5px;
+      clip-path: polygon(15% 0, 100% 0, 100% 85%, 85% 100%, 0 100%, 0 15%);
+      animation: floatProfile 6s infinite alternate ease-in-out, pulse-neon 2s infinite alternate;
+    }
+
+    @keyframes pulse-neon {
+      0% {
+        box-shadow: 0 0 10px rgba(255, 0, 60, 0.4);
+        outline-color: rgba(255, 0, 60, 0.8);
+      }
+
+      100% {
+        box-shadow: 0 0 30px rgba(255, 0, 60, 0.9);
+        outline-color: #ff003c;
+      }
+    }
+
+    .profile-img:hover {
+      transform: scale(1.05);
+      outline-color: #00f0ff;
+      box-shadow: 0 0 40px rgba(0, 240, 255, 0.8);
+    }
+
+    @keyframes floatProfile {
+      from {
+        transform: translateY(0px);
+      }
+
+      to {
+        transform: translateY(10px);
+      }
+    }
+
+    section {
+      padding: 80px 10%;
+      position: relative;
+      z-index: 3;
+    }
+
+    h2 {
+      margin-bottom: 30px;
+      font-size: 2.2rem;
+      color: #fff;
+      text-shadow: 0 0 10px #ff003c;
+      border-bottom: 2px solid #ff003c;
+      display: inline-block;
+      padding-bottom: 5px;
+    }
+
+    .neon-text {
+      color: #00f0ff;
+      text-shadow: 0 0 10px #00f0ff;
+    }
+
+    /* Cyber Glass Cards */
+    .card {
+      background: rgba(10, 15, 25, 0.8);
+      border: 1px solid #1a2235;
+      border-left: 4px solid #00f0ff;
+      padding: 30px;
+      position: relative;
+      overflow: hidden;
+      font-size: 1.15rem;
+      line-height: 1.6;
+      transition: all 0.3s ease;
+      clip-path: polygon(0 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%);
+    }
+
+    .card::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 20px;
+      height: 20px;
+      background: #00f0ff;
+    }
+
+    .card:hover {
+      box-shadow: inset 0 0 20px rgba(0, 240, 255, 0.1), 0 0 20px rgba(0, 240, 255, 0.2);
+      border-color: #00f0ff;
+      border-left: 4px solid #ff003c;
+    }
+
+    .card:hover::after {
+      background: #ff003c;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+    }
+
+    /* Floating blobs replaced with neon geometric shapes */
+    .shape {
+      position: absolute;
+      z-index: 1;
+      opacity: 0.1;
+      pointer-events: none;
+    }
+
+    .shape-1 {
+      top: 15%;
+      left: 5%;
+      width: 200px;
+      height: 200px;
+      border: 5px solid #ff003c;
+      transform: rotate(45deg);
+      animation: spin 15s linear infinite;
+    }
+
+    .shape-2 {
+      bottom: 10%;
+      right: 5%;
+      width: 150px;
+      height: 150px;
+      border: 5px solid #00f0ff;
+      border-radius: 50%;
+      animation: float 8s ease-in-out infinite alternate;
+    }
+
+    @keyframes spin {
+      100% {
+        transform: rotate(405deg);
+      }
+    }
+
+    @keyframes float {
+      from {
+        transform: translateY(0px) scale(1);
+      }
+
+      to {
+        transform: translateY(-50px) scale(1.1);
+      }
+    }
+
+    /* Interactive Cursor Follower */
+    #cursor-glow {
+      position: fixed;
+      width: 10px;
+      height: 10px;
+      background: #ff003c;
+      box-shadow: 0 0 20px 10px rgba(255, 0, 60, 0.5);
+      border-radius: 50%;
+      pointer-events: none;
+      transform: translate(-50%, -50%);
+      z-index: 10000;
+      transition: width 0.1s, height 0.1s, background-color 0.2s;
+    }
+
+    /* 3D Tilt Card */
+    .tilt {
+      transform-style: preserve-3d;
+      transition: transform 0.1s ease;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      background: #020205;
+      border-top: 1px solid #1a2235;
+      position: relative;
+      z-index: 3;
+    }
+
+    footer p {
+      color: #6c7a89;
+      font-size: 0.9rem;
+      letter-spacing: 1px;
+    }
+
+    a.neon-link {
+      color: #00f0ff;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    a.neon-link:hover {
+      color: #ff003c;
+      text-shadow: 0 0 5px #ff003c;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="shape shape-1"></div>
+  <div class="shape shape-2"></div>
+
+  <header>
+    <img src="C:\Users\Bapukagift\OneDrive\Pictures\PORTFOLIO .jpeg" alt="Profile Picture" class="profile-img">
+    <h1>Subhranil Das</h1>
+    <p class="subtitle">STUDENT [B.Tech Student] | DEV_REALM</p>
+    <p class="quote"><i>"You say build, I heard code — Time to level up."</i></p>
+    <div class="action-buttons">
+      <a href="#projects" class="btn">MY PROFILE</a>
+      <button onclick="downloadProfilePDF()" class="btn btn-alt">DOWNLOAD PROFILE</button>
+    </div>
+  </header>
+
+  <section>
+    <h2><span class="neon-text">&lt;</span> About Me <span class="neon-text">/&gt;</span></h2>
+    <div class="card tilt">
+      Welcome to my player profile! I am a first-year B.Tech CSE (AI & ML) student at Manav Rachna University. Outside
+      the academic arena, I am a passionate coder on an epic quest to conquer the ever-evolving realm of technology.
+      Much like leveling up in a high-stakes RPG, my developer journey is fully immersive—grinding through syntax
+      errors, unlocking the mysteries of artificial intelligence, and mastering complex machine learning algorithms. I
+      thrive on hardcore problem-solving, turning intricate logic into highly optimized code, and building applications
+      that push the boundaries of modern innovation. When I'm not studying my skill tree or exploring new tech stacks,
+      I'm analyzing game-changing algorithms to perfect my builds. Ready up—let's team up and craft some legendary
+      digital experiences!
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="neon-text">&lt;</span> Skill Tree <span class="neon-text">/&gt;</span></h2>
+    <div class="grid">
+      <div class="card tilt">
+        <h3 style="color:#00f0ff; margin-bottom: 10px;">[ Python ]</h3>
+        <p><strong>Current Level:</strong> Novice Mage.<br>Learning core spells to automate processes and manipulate
+          data effectively.</p>
+      </div>
+      <div class="card tilt">
+        <h3 style="color:#ff003c; margin-bottom: 10px;">[ Tools & Tech ]</h3>
+        <p><strong>Equipped Inventory:</strong><br>Gemini | GitHub | Stitch | Antigravity</p>
+      </div>
+      <div class="card tilt">
+        <h3 style="color:#00ff66; margin-bottom: 10px;">[ Comms ]</h3>
+        <p><strong>Languages Enabled:</strong><br>English | Hindi | Bengali</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2><span class="neon-text">&lt;</span> Quest Log <span class="neon-text">/&gt;</span></h2>
+    <div class="card tilt">
+      <h3 style="color:#00f0ff; margin-bottom: 10px;">Python Calculator</h3>
+      <p>A functional calculator engineered using Python to run arithmetic operations and strengthen logic building. A
+        fundamental quest completed with clean code and precision.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="neon-text">&lt;</span> Guild Info <span class="neon-text">/&gt;</span></h2>
+    <div class="card tilt">
+      <strong>Guild:</strong> Manav Rachna University<br>
+      <strong>Class:</strong> B.Tech CSE (AI & ML)<br>
+      <strong>Rank:</strong> 1st Year Initiate
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="neon-text">&lt;</span> Contact <span class="neon-text">/&gt;</span></h2>
+    <div class="card tilt">
+      <strong>Comm Link:</strong> dassubhranil18@gmail.com<br>
+      <strong>GitHub:</strong> <a href="https://github.com/REALMSUBH" target="_blank"
+        class="neon-link">REALMSUBH</a><br>
+      <strong>LinkedIn:</strong> <a
+        href="https://www.linkedin.com/in/subhranil-das-554722365?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+        target="_blank" class="neon-link">Subhranil Das</a>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 SUBHRANIL DAS // SYSTEM.READY</p>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script>
+    // Download Profile PDF Function
+    function downloadProfilePDF() {
+      const { jsPDF } = window.jspdf;
+      const doc = new jsPDF();
+
+      // Cyber background
+      doc.setFillColor(5, 5, 16);
+      doc.rect(0, 0, 210, 297, "F");
+
+      // Title
+      doc.setTextColor(0, 240, 255);
+      doc.setFont("courier", "bold");
+      doc.setFontSize(22);
+      doc.text("S U B H R A N I L   D A S", 105, 30, null, null, "center");
+
+      // Subtitle
+      doc.setTextColor(255, 0, 60);
+      doc.setFontSize(14);
+      doc.text("PLAYER PROFILE LOG [ PDF FORMAT ]", 105, 40, null, null, "center");
+
+      // Info
+      doc.setTextColor(224, 230, 237);
+      doc.setFont("courier", "normal");
+      doc.setFontSize(12);
+      let y = 60;
+      doc.text(">> CLASS: B.Tech CSE (AI & ML), 1st Year", 20, y); y += 8;
+      doc.text(">> GUILD: Manav Rachna University", 20, y); y += 20;
+
+      // Contact
+      doc.setTextColor(0, 255, 102);
+      doc.setFont("courier", "bold");
+      doc.text("[ CONTACT_INFO ]", 20, y); y += 10;
+      doc.setTextColor(224, 230, 237);
+      doc.setFont("courier", "normal");
+      doc.text("- Email: dassubhranil18@gmail.com", 20, y); y += 8;
+      doc.text("- GitHub: https://github.com/REALMSUBH", 20, y); y += 20;
+
+      // About
+      doc.setTextColor(0, 255, 102);
+      doc.setFont("courier", "bold");
+      doc.text("[ ABOUT_ME ]", 20, y); y += 10;
+      doc.setTextColor(224, 230, 237);
+      doc.setFont("courier", "normal");
+      doc.text("I am a passionate coder on an epic quest to conquer the ever-", 20, y); y += 8;
+      doc.text("evolving realm of technology. Much like leveling up in a high-", 20, y); y += 8;
+      doc.text("stakes RPG, my developer journey is fully immersive—grinding", 20, y); y += 8;
+      doc.text("through syntax errors, unlocking the mysteries of AI, and", 20, y); y += 8;
+      doc.text("mastering complex algorithms.", 20, y); y += 20;
+
+      // Skills
+      doc.setTextColor(0, 255, 102);
+      doc.setFont("courier", "bold");
+      doc.text("[ SKILL_TREE ]", 20, y); y += 10;
+      doc.setTextColor(224, 230, 237);
+      doc.setFont("courier", "normal");
+      doc.text("- Python: Novice Mage (Automating processes, manipulation)", 20, y); y += 8;
+      doc.text("- Tools & Tech: Gemini, GitHub, Stitch, Antigravity", 20, y); y += 8;
+      doc.text("- Comms: English, Hindi, Bengali", 20, y); y += 20;
+
+      // Projects
+      doc.setTextColor(0, 255, 102);
+      doc.setFont("courier", "bold");
+      doc.text("[ QUEST_LOG ]", 20, y); y += 10;
+      doc.setTextColor(224, 230, 237);
+      doc.setFont("courier", "normal");
+      doc.text("- Python Calculator: A functional calculator engineered", 20, y); y += 8;
+      doc.text("  using Python to run arithmetic operations and logic.", 20, y); y += 20;
+
+      doc.setTextColor(0, 240, 255);
+      doc.text(">> END_OF_FILE", 105, 280, null, null, "center");
+
+      doc.save("Subhranil_Das_Profile.pdf");
+    }
+    // Cyber Cursor Follower
+    const glow = document.createElement('div');
+    glow.id = 'cursor-glow';
+    document.body.appendChild(glow);
+
+    window.addEventListener('mousemove', (e) => {
+      glow.style.left = e.clientX + 'px';
+      glow.style.top = e.clientY + 'px';
+    });
+
+    document.querySelectorAll('a, .btn, .card').forEach(el => {
+      el.addEventListener('mouseenter', () => {
+        glow.style.transform = 'translate(-50%, -50%) scale(2.5)';
+        glow.style.background = 'transparent';
+        glow.style.border = '1px solid #00f0ff';
+        glow.style.boxShadow = '0 0 10px #00f0ff';
+      });
+      el.addEventListener('mouseleave', () => {
+        glow.style.transform = 'translate(-50%, -50%) scale(1)';
+        glow.style.background = '#ff003c';
+        glow.style.border = 'none';
+        glow.style.boxShadow = '0 0 20px 10px rgba(255, 0, 60, 0.5)';
+      });
+    });
+
+    // Interactive Cards (3D Tilt)
+    const cards = document.querySelectorAll('.card');
+    cards.forEach(card => {
+      card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect();
+
+        if (card.classList.contains('tilt')) {
+          const centerX = rect.left + rect.width / 2;
+          const centerY = rect.top + rect.height / 2;
+          const rotateX = ((e.clientY - centerY) / (rect.height / 2)) * -5;
+          const rotateY = ((e.clientX - centerX) / (rect.width / 2)) * 5;
+          card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.02)`;
+        }
+      });
+
+      card.addEventListener('mouseleave', () => {
+        if (card.classList.contains('tilt')) {
+          card.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) scale(1)`;
+        }
+      });
+    });
+  </script>
+</body>
+
+</html>
